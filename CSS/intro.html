@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMC - CSS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1 style="color: red;">CSS</h1>
+
+    <!-- Inline CSS -->
+    <h2 style="background-color: aqua;">Inline CSS</h2>
+
+    <!-- Internal CSS -->
+    <h3>Internal CSS</h3>
+    <style>
+        h3 {
+            background-color: blueviolet;
+        }
+    </style>
+
+    <!-- External CSS -->
+    <h4>External CSS</h4>
+    <hr>
+
+    <!-- background color & color -->
+    <div style="background-color: black;">
+        <p style="color: #fff;">Background color & Color</p>
+    </div>
+    <hr>
+
+    <!-- text alignment -->
+    <div style="background-color: brown; color: #fff;">
+        <p style="text-align: left;">Text Align: left</p>
+        <p style="text-align: right;">Text Align: right</p>
+        <p style="text-align: center;">Text Align: center</p>
+    </div>
+    <hr>
+
+    <!-- Font Size, Font-family and Font-weight -->
+    <div style="background-color: yellowgreen;">
+        <p style="font-size: 30px;">Font Size</p>
+        <p style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Font Family</p>
+        <p style="font-weight: bolder;">Font Weight</p>
+    </div>
+    <hr>
+
+    <!-- text-decoration -->
+    <div>
+        <p style="text-decoration: underline;">Text decoration: Underline</p>
+        <p style="text-decoration: line-through;">Text decoration: Line-through</p>
+        <p style="text-decoration: overline;">Text decoration: Overline</p>
+    </div>
+    <hr>
+
+    <!-- Width & Height -->
+    <div style="width: 100px; height: 100px; background: #000;"></div>
+    <hr>
+
+    <!-- Selectors -->
+    <h2>Type Selector</h2>
+    <h2 class="h2">Class Selector</h2>
+    <h2 id="h2">ID selector</h2>
+    <style>
+        h2 {
+            background-color: chartreuse;
+        }
+
+        .h2 {
+            background-color: black;
+            color: white;
+        }
+
+        #h2 {
+            background-color: yellowgreen;
+        }
+
+        /* universal selector */
+        /* * {
+            background-color: aliceblue;
+        } */
+    </style>
+    <hr>
+
+    <!-- Box Model -->
+    <!-- Padding, Margin and border -->
+    <div style="background-color: #000;">
+        <h3 style="padding: 10px;">Padding</h3>
+    </div>
+    <div style="background-color: #000;">
+        <h3 style="margin: 50px;">Margin</h3>
+    </div>
+    <div>
+        <h3 style="border: 5px solid red;">Border</h3>
+    </div>
+    <div>
+        <h3 style="border: 5px solid red; border-radius: 10px;">Border radius</h3>
+    </div>
+    <hr>
+
+    <!-- Display property -->
+    <!-- block, inline, inline-block -->
+    <div>
+        <h2 style="display: block; background-color: red;">Display: Block 1</h2>
+        <h2 style="display: inline; background-color: red;">Display: Inline 1</h2>
+        <h2 style="display: inline; background-color: red;">Display: Inline 2</h2>
+        <h2 style="display: inline; background-color: red;">Display: Inline 3</h2>
+        <h2 style="display: block; background-color: red;">Display: Block 2</h2>
+        <h2 style="display: inline-block; width: 400px; background-color: red;">Display: Inline-Block</h2>
+    </div>
+    <hr>
+
+    <!-- pseudo class (hover & focus) -->
+    <div class="div">
+        <button>Hover me</button>
+        <input type="text" placeholder="focus me">
+    </div>
+    <style>
+        .div {
+            background-color: aliceblue;
+        }
+
+        .div button,
+        .div input {
+            font-size: 25px;
+        }
+
+        .div button:hover {
+            background-color: black;
+            color: #fff;
+        }
+
+        .div input:focus {
+            outline: 5px solid purple;
+        }
+    </style>
+    <hr>
+
+    <!-- BEM -->
+    <!-- Block - Element = Modifier -->
+    <h2 style="background-color: transparent;">Creating CSS Card using BEM method</h2>
+    <div class="card">
+        <img class="card__image" src="https://picsum.photos/200" alt="Ooty image">
+        <h3 class="card__title">Ooty: Queen of Hills</h3>
+        <p class="card__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet ex, voluptates fugit
+            exercitationem ipsa non, excepturi, repellendus ipsam dolore id molestiae atque! Culpa id debitis eos totam
+            magni cupiditate consectetur!</p>
+        <button class="card__button">Checkout</button>
+    </div>
+    <style>
+        .card {
+            background-color: black;
+            color: #fff;
+            width: 200px;
+            padding: 10px;
+        }
+
+        .card__title {
+            background-color: #000; color: #fff;
+        }
+
+        .card__button {
+            background-color: transparent;
+            color: #fff;
+            padding-top: 2px;
+            border: 1px solid greenyellow;
+        }
+
+        .card__button:hover {
+            background-color: greenyellow;
+            color: black;
+        }
+    </style>
+    <hr>    
+</body>
+
+</html>

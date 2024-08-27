@@ -1,0 +1,87 @@
+/* External CSS */
+h4 {
+    background-color: cadetblue;
+}
+
+/* Exercise 1 */
+.exe1 {
+    padding: 30px;
+    border: 5px solid purple;
+}
+
+/* Exercise 2 */
+.exe2 {
+    padding: 10px;
+}
+
+.exe2 h2 {
+    background-color: black;
+    color: white;
+    padding-left: 40px;
+}
+
+/* Exercise 3 */
+.exe3 {
+    background-color: black;
+    height: 200px; width: 200px;
+    border-top: 10px solid purple;
+    border-left: 10px solid violet;
+    border-bottom: 10px solid red;
+    border-right: 10px dotted yellow;
+}
+
+/* Exercise 4 */
+.exe4 {
+    background-color: black;
+    width: 25%;
+    color: #fff;
+    padding: 30px 20px;
+    border-radius: 20px;
+}
+
+/* Exercise 5 */
+.exe5 div {
+    height: 200px; width: 200px;
+    display: inline-block;
+}
+
+.red {
+    background-color: red;
+}
+
+.black {
+    background-color: black;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+/* Exercise 6 */
+.exe6 p {
+    display: inline-block;
+    background-color: orange;
+    color: #fff;
+    padding: 10px;
+    margin: 0 3px;
+}
+
+/* Exercise 7 */
+.exe7 {
+    background-color: black;
+    color: #fff;
+    width: 200px;
+    padding: 10px;
+}
+
+.exe7 button {
+    background-color: transparent;
+    color: #fff;
+    padding-top: 2px;
+    border: 1px solid greenyellow;
+}
+
+.exe7 button:hover {
+    background-color: greenyellow;
+    color: black;
+}
