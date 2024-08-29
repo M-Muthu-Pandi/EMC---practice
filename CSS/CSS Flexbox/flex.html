@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox</title>
+</head>
+
+<body>
+    <h1 style="text-decoration: underline;">Flexbox</h1>
+    <hr>
+
+    <!-- Display: flex -->
+    <div class="flex">
+        <h1>One</h1>
+        <h1>Two</h1>
+        <h1>Three</h1>
+    </div>
+    <style>
+        .flex {
+            display: flex;
+        }
+
+        .flex h1 {
+            background-color: red;
+            padding: 10px;
+            margin: 5px;
+        }
+    </style>
+    <hr>
+
+    <!-- Flex wrap -->
+    <div class="f-wrap">
+        <h2>1</h2>
+        <h2>2</h2>
+        <h2>3</h2>
+        <h2>4</h2>
+        <h2>5</h2>
+        <h2>6</h2>
+        <h2>7</h2>
+        <h2>8</h2>
+        <h2>9</h2>
+        <h2>10</h2>
+    </div>
+    <style>
+        .f-wrap {
+            background-color: skyblue;
+            padding: 10px;
+            width: 230px;
+            display: flex;
+            flex-wrap: wrap;
+
+        }
+
+        .f-wrap h2 {
+            background-color: red;
+            padding: 5px 10px;
+            margin: 5px;
+        }
+    </style>
+    <hr>
+
+    <!-- Justify content -->
+    <div class="j-content">
+        <h1>One</h1>
+        <h1>Two</h1>
+    </div>
+    <style>
+        .j-content {
+            background-color: yellowgreen;
+            display: flex;
+            /* justify-content: center; */
+            justify-content: space-around;
+        }
+
+        .j-content h1 {
+            background-color: black;
+            color: white;
+            padding: 10px;
+            margin: 5px;
+        }
+    </style>
+    <hr>
+
+    <!-- Align Items -->
+    <div class="a-items">
+        <h1>One</h1>
+        <h1>Two</h1>
+    </div>
+    <style>
+        .a-items {
+            background-color: greenyellow;
+            height: 200px;
+            width: 200px;
+            display: flex;
+            align-items: center;
+            /* align-items: flex-end; */
+        }
+
+        .a-items h1 {
+            background-color: black;
+            color: white;
+            margin: 5px;
+        }
+    </style>
+    <hr>
+
+    <!-- Flex direction -->
+    <div class="f-dir-cont">
+        <div class="f-direction1">
+            <h1>One</h1>
+            <h1>Two</h1>
+        </div>
+        <div class="f-direction2">
+            <h1>One</h1>
+            <h1>Two</h1>
+        </div>
+        <div class="f-direction3">
+            <h1>One</h1>
+            <h1>Two</h1>
+        </div>
+    </div>
+    <style>
+        .f-dir-cont {
+            display: flex;
+            gap: 20px;
+        }
+
+        .f-dir-cont h1 {
+            background-color: black;
+            color: white;
+            margin: 5px;
+            height: 50px;
+            width: 60px;
+        }
+
+        .f-direction1,
+        .f-direction2,
+        .f-direction3 {
+            background-color: greenyellow;
+            height: 200px;
+            width: 200px;
+            display: flex;
+        }
+
+        .f-direction1 {
+            /* flex-direction: row; */
+            flex-direction: row-reverse;
+        }
+
+        .f-direction2 {
+            flex-direction: column;
+        }
+
+        .f-direction3 {
+            flex-direction: column-reverse;
+        }
+    </style>
+    <hr>
+
+    <!-- Flex grow -->
+    <div class="f-grow">
+        <h1 class="f-grow__one">One</h1>
+        <h1 class="f-grow__two">Two</h1>
+    </div>
+    <style>
+        .f-grow h1 {
+            background-color: blue;
+            color: white;
+            margin: 5px;
+        }
+
+        .f-grow {
+            border: 1px solid black;
+            display: flex;
+        }
+
+        .f-grow__one {
+            flex-grow: 2;
+        }
+
+        .f-grow__two {
+            flex-grow: 1;
+        }
+    </style>
+    <hr>
+
+    <!-- Flex basis -->
+    <div class="f-basis">
+        <h1 class="f-basis__one">One</h1>
+        <h1 class="f-basis__two">Two</h1>
+    </div>
+    <style>
+        .f-basis h1 {
+            background-color: gray;
+            color: white;
+            margin: 5px;
+        }
+
+        .f-basis {
+            border: 1px solid black;
+            display: flex;
+        }
+
+        .f-basis__one {
+            flex-basis: 350px;
+        }
+
+        .f-basis__two {
+            flex-basis: 300px;
+        }
+    </style>
+    <hr>
+</body>
+
+</html>

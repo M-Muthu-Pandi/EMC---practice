@@ -1,0 +1,64 @@
+/* Exercise 1 */
+.exe1 {
+    display: flex;
+}
+
+.exe1 h2 {
+    background-color: orange;
+    color: white;
+    padding: 5px 10px;
+    margin: 5px;
+}
+
+/* Exercise 2 */
+.exe2 {
+    background-color: greenyellow;
+    padding: 10px;
+    width: 230px;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.exe2 h2 {
+    background-color: orange;
+    padding: 5px 10px;
+    margin: 5px;
+}
+
+/* Exercise 3 */
+.exe3 {
+    background-color: greenyellow;
+    width: 200px; height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.exe3 h2 {
+    background-color: orange;
+    padding: 5px 10px; margin: 5px;
+}
+
+/* Exercise 4 */
+.exe4 {
+    background-color: rgb(5, 246, 234);
+    width: 350px; height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.exe4__div {
+    background-color: black;
+    padding: 0 20px;
+}
+
+.exe4__div div {
+    background-color: orange;
+    width: 60px; height: 10px;
+    margin: 10px;
+    border-radius: 30px;
+}
+
