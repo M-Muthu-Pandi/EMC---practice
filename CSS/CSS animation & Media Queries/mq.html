@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Media Queries</title>
+</head>
+
+<body>
+    <h1>CSS Media Queries</h1>
+
+    <!-- Basic -->
+    <div class="print">
+        <h2>Print & Screen</h2>
+    </div>
+    <style>
+        @media screen {
+            .print {
+                color: red;
+            }
+        }
+
+        @media print {
+            .print {
+                color: green;
+            }
+        }
+    </style>
+
+    <!-- Max-width & Min-width -->
+    <div class="max-width">
+        <h2>Max-width</h2>
+    </div>
+    <div class="min-width">
+        <h2>Min-width</h2>
+    </div>
+    <style>
+        @media screen and (max-width:800px) {
+            .max-width {
+                color: red;
+            }
+        }
+        @media screen and (max-width:600px) {
+            .max-width {
+                color: blue;
+            }
+        }
+
+        @media screen and (min-width:600px) {
+            .min-width {
+                color: blue;
+            }
+        }
+        @media screen and (min-width:800px) {
+            .min-width {
+                color: red;
+            }
+        }
+    </style>
+</body>
+
+</html>

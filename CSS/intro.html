@@ -159,7 +159,8 @@
         }
 
         .card__title {
-            background-color: #000; color: #fff;
+            background-color: #000;
+            color: #fff;
         }
 
         .card__button {
@@ -174,7 +175,68 @@
             color: black;
         }
     </style>
-    <hr>    
+    <hr>
+
+    <!-- Position -->
+    <!-- static, relative, absolute, fixed & sticky -->
+    <div style="position: relative;">
+        <div class="static" style="position: static;">
+            <h1>Static (Default position)</h1>
+        </div>
+        <div class="relative" style="position: relative;">
+            <h1>Relative</h1>
+        </div>
+        <div class="absolute" style="position: absolute;">
+            <h1>Absolute</h1>
+        </div>
+        <div class="fixed" style="position: fixed;">
+            <h1>Fixed</h1>
+        </div>
+        <div class="sticky" style="position: sticky;">
+            <h1>Sticky</h1>
+        </div>
+    </div>
+    <style>
+        .static,
+        .relative,
+        .absolute,
+        .fixed,
+        .sticky {
+            background-color: aquamarine;
+            padding: 20px;
+            width: 200px;
+            margin: 10px;
+            left: 200px;
+            top: 10px;
+        }
+    </style>
+    <hr>
+
+    <!-- z-index -->
+    <div class="z-one"></div>
+    <div class="z-two"></div>
+    <div class="z-three"></div>
+    <style>
+        .z-one,.z-two,.z-three {
+            width: 100px;
+            height: 100px;
+            position: relative;
+        }
+        .z-one {
+            background-color: red;
+            top: 50px;
+            z-index: 3;
+        }
+        .z-two {
+            background-color: blue;
+            z-index: 2;
+        }
+        .z-three {
+            background-color: yellow;
+            left: 50px; bottom: 100px;
+            z-index: 1;
+        }
+    </style>
 </body>
 
 </html>

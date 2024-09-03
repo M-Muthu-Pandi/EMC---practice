@@ -1,0 +1,82 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    margin: 20px 0 0 20px;
+}
+
+/* Exercise 1 */
+.exe1 {
+    background-color: purple;
+    width: 400px;
+}
+
+.exe1__box {
+    background-color: aqua;
+    padding: 10px;
+    position: relative;
+    top: 30px; left: 30px;
+}
+
+/* Exercise 2 */
+.exe2 {
+    /* border: 2px solid black; */
+    width: fit-content;
+    position: relative;
+}
+
+.exe2 img {
+    width: 200px;
+}
+
+.exe2 h1 {
+    background-color: red;
+    color: white;
+    padding: 10px;
+    border-radius: 50px;
+    width: fit-content;
+    position: absolute;
+    top: 0; right: 20px;
+}
+
+/* Exercise 3 */
+.exe3 {
+    background-color: #F38E9A;
+    position: relative;
+    padding: 20px 0;
+    width: 350px;
+    height: 200px;
+}
+
+.exe3__content1 {
+    position: absolute;
+    top: 45%; left: -10px;
+    background-color: black;
+    padding: 10px 10px 7px 8px;
+    border-radius: 50%;
+}
+
+.exe3 img{
+    width: 16px;
+}
+
+.exe3 h2 {
+    position: absolute;
+    top: 48%; left: 48%;
+    color: white;
+}
+
+.exe3__content2 {
+    position: absolute;
+    top: 45%; right: -10px;
+    background-color: black;
+    padding: 10px 8px 7px 10px;
+    border-radius: 50%;
+}
+
+.exe3 h1 {
+    position: absolute;
+    bottom: 0; left: 45%;
+}

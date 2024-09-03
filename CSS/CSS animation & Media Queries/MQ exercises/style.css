@@ -1,0 +1,70 @@
+/* Exercise 1 */
+.exe1 {
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+
+.exe1__nav, .exe1__nav li {
+    display: flex;
+    align-items: center;
+    /* margin: 0 10px; */
+    gap: 10px;
+}
+
+/* Mobile view */
+@media screen and (max-width:600px) {
+    .exe1__nav {
+        display: none;
+    }
+}
+
+/* Exercise 2 */
+.exe2 {
+    display: flex;
+    gap: 10px;
+    justify-content: space-around;
+}
+
+.exe2 div {
+    height: 100px; width: 100px;
+}
+
+.exe2__red {
+    background-color: red;
+}
+
+.exe2__blue {
+    background-color: blue;
+}
+
+/* Mobile view */
+@media screen and (max-width:600px) {
+    .exe2__red {
+        border-radius: 50%;
+    }
+    .exe2__blue {
+        display: none;
+    }
+}
+
+/* Exercise 3 */
+.exe3 {
+    background-color: aqua;
+    padding: 10px;
+}
+
+.exe3 h3 {
+    display: none;
+}
+
+@media screen and (max-width:600px) {
+    .exe3 h1 {
+        display: none;
+    }
+    .exe3 h3 {
+        display: block;
+    }
+}

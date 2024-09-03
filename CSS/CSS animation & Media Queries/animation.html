@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Animation</title>
+</head>
+
+<body>
+    <h1>CSS Animations</h1>
+
+    <!-- Hover Animation-->
+    <div class="basic-anim"></div>
+    <style>
+        .basic-anim {
+            height: 100px;
+            width: 100px;
+            background-color: red;
+        }
+
+        .basic-anim:hover {
+            background-color: yellow;
+            transition: 2s;
+        }
+    </style>
+    <hr>
+
+    <!-- opacity and rgpa -->
+    <div class="opacity">
+        <h1>Opacity</h1>
+    </div>
+    <div class="rgpa">
+        <h1>rgpa</h1>
+    </div>
+    <style>
+        .opacity {
+            background-color: red;
+            opacity: 0.5;
+        }
+
+        .rgpa {
+            background-color: rgba(255, 0, 0, 0.5);
+        }
+    </style>
+    <hr>
+
+    <!-- transition -->
+    <div class="transition"></div>
+    <br>
+    <div class="transform"></div>
+    <style>
+        .transition {
+            height: 100px;
+            width: 100px;
+            background-color: red;
+        }
+
+        .transition:hover {
+            background-color: yellow;
+            transition-duration: 2s;
+            /* transition-delay: 2s; */
+            margin-left: 100px;
+            /* transition-property: margin-left; */
+            transition-property: margin-left;
+        }
+
+        .transform {
+            height: 100px;
+            width: 100px;
+            background-color: blue;
+            transition: 2s;
+        }
+
+        .transform:hover {
+            transition: 2s;
+            /* transform: translateX(100px); */
+            /* transform: translateY(100px); */
+            transform: rotate(180deg);
+            transform: scale(0.5);
+            /* transform: scale(2); */
+        }
+    </style>
+    <hr>
+
+    <!-- Advanced Animation -->
+    <!-- keyframes -->
+    <div class="animation"></div>
+    <style>
+        .animation {
+            height: 100px;
+            width: 100px;
+            background-color: green;
+            animation-name: mu2;
+            animation-duration: 2s;
+            /* animation-iteration-count: infinite; */
+        }
+
+        @keyframes mu2 {
+            0% {
+                margin-left: 0;
+            }
+
+            50% {
+                margin-top: 100px;
+            }
+
+            100% {
+                margin-left: 500px;
+            }
+        }
+    </style>
+    <hr>
+
+    <!-- Task -->
+    <h1>Task</h1>
+    <div class="exe1"></div>
+    <style>
+        .exe1 {
+            height: 100px;
+            width: 100px;
+            background-color: green;
+            animation-name: exe1-task;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes exe1-task {
+            0% {
+                margin-left: 0;
+                margin-top: 0;
+            }
+
+            25% {
+                margin-top: 100px;
+                margin-left: 0;
+            }
+
+            50% {
+                margin-top: 100px;
+                margin-left: 100px;
+            }
+
+            75% {
+                margin-top: 0;
+                margin-left: 100px;
+            }
+
+            100% {
+                margin-left: 0;
+                margin-top: 0;
+            }
+        }
+    </style>
+</body>
+
+</html>
