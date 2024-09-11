@@ -10,7 +10,6 @@
 .exe1__nav, .exe1__nav li {
     display: flex;
     align-items: center;
-    /* margin: 0 10px; */
     gap: 10px;
 }
 

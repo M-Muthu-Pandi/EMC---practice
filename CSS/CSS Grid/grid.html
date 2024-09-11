@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid</title>
+</head>
+
+<body>
+    <h1>CSS Grid</h1>
+    <!-- grid & template-columns -->
+    <div class="grid-1">
+        <h1>One</h1>
+        <h1>Two</h1>
+        <h1>Three</h1>
+        <h1>Four</h1>
+    </div>
+    <hr>
+    <style>
+        .grid-1 {
+            display: grid;
+            /* grid-template-columns: 100px 200px 300px 400px; */
+            grid-template-columns: 100px 200px;
+        }
+
+        .grid-1 h1 {
+            background-color: green;
+            color: white;
+            padding: 3px;
+            margin: 2px;
+        }
+    </style>
+
+    <!-- flex grow using grid -->
+    <div class="grid-2">
+        <h1>One</h1>
+        <h1>Two</h1>
+        <h1>Three</h1>
+        <h1>Four</h1>
+    </div>
+    <hr>
+    <style>
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr 1fr;
+        }
+
+        .grid-2 h1 {
+            background-color: green;
+            color: white;
+            padding: 3px;
+            margin: 2px;
+        }
+    </style>
+
+    <!-- grid-template-rows -->
+    <div class="grid-3">
+        <h1>One</h1>
+        <h1>Two</h1>
+        <h1>Three</h1>
+        <h1>Four</h1>
+        <h1>Five</h1>
+        <h1>Six</h1>
+    </div>
+    <hr>
+    <style>
+        .grid-3 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 2fr 1fr;
+
+        }
+
+        .grid-3 h1 {
+            background-color: green;
+            color: white;
+            padding: 3px;
+            margin: 2px;
+        }
+    </style>
+
+    <!-- justify content & align items -->
+    <div class="grid-4">
+        <h1>One</h1>
+    </div>
+    <hr>
+    <style>
+        .grid-4 {
+            background-color: greenyellow;
+            width: 200px;
+            height: 200px;
+            display: grid;
+            justify-content: center;
+            align-items: center;
+            /* same as flex */
+        }
+    </style>
+</body>
+
+</html>
