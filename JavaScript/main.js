@@ -16,3 +16,21 @@ if (false) {
 else {
     console.log("It's false");
 }
+
+// function
+function mu2(x,y) {
+    console.log(x+y);
+}
+mu2(5,2);
+
+// Random number
+var randomNumber = Math.random()*10;
+console.log(Math.floor(randomNumber)+1); // 1 to 10
+
+// Prompt function
+var name1 = prompt();
+var age = prompt();
+console.log("Your name is: "+ name1);
+console.log("Your age is: "+ age);
+
+

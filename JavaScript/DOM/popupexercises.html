@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pop up Exercise</title>
+    <style>
+        .pop-flex {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 500px;
+        }
+
+        .popup {
+            background-color: #fff;
+            border: 2px solid black;
+            padding: 15px;
+            width: 300px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .overlay {
+            background-color: black;
+            opacity: 0.5;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Pop Up Exercise</h1>
+    <button id="btn">Click</button>
+    <div class="overlay hidden"></div>
+    <div class="pop-flex">
+        <div class="popup hidden">
+            <p style="text-align: right; cursor: pointer;" id="close">X</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis eum laborum veritatis numquam
+                maiores soluta excepturi! Ipsum alias culpa iste, quod officiis aliquam expedita odit quasi earum magni
+                architecto aperiam. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque hic eveniet pariatur, quibusdam assumenda, aliquam non tempora provident voluptatibus asperiores, voluptas culpa veniam beatae cupiditate laborum inventore. Explicabo, nostrum deserunt. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore unde pariatur a inventore. A sed, repellat inventore veritatis eius magni veniam eligendi consectetur ipsum commodi, earum quidem cum, tempora nobis?</p>
+        </div>
+    </div>
+
+    <script>
+        var pop = document.querySelector(".popup");
+        var btn = document.getElementById("btn");
+        var close = document.getElementById("close");
+        var overlay = document.querySelector(".overlay");
+
+        btn.addEventListener("click", function () {
+            pop.classList.remove("hidden");
+            overlay.classList.remove("hidden");
+        });
+
+        close.addEventListener("click", function () {
+            pop.classList.add("hidden");
+            overlay.classList.add("hidden");
+        });
+    </script>
+</body>
+
+</html>

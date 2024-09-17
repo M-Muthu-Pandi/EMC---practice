@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+
+<body>
+    <h1>DOM - Document Object Model</h1>
+    <!-- document.getElementById -->
+    <h2>document.getElementById</h2>
+    <p id="one">Hello</p>
+    <p id="two">Bye</p>
+    <hr>
+    <script>
+        var one = document.getElementById("one");
+        one.textContent = "Hello World";
+
+        var two = document.getElementById("two");
+        two.textContent = "Bye World";
+    </script>
+
+    <!-- document.querSelector -->
+    <h2>document.querSelector</h2>
+    <p class="one">Hello</p>
+    <h4>Bye</h4>
+    <hr>
+    <script>
+        var one1 = document.querySelector(".one");
+        one1.textContent = "Hello World 2";
+
+        var two2 = document.querySelector("h4");
+        two2.textContent = "Bye World 2";
+    </script>
+
+    <!-- setAttribute & removeAttribute -->
+    <h2>setAttribute & removeAttribute</h2>
+    <h3 id="para" class="bg">One</h3>
+    <hr>
+    <style>
+        .bg {
+            background-color: red;
+        }
+    </style>
+    <script>
+        var para = document.getElementById("para");
+        para.setAttribute("class", "bg");
+        // para.removeAttribute("class");
+        para.removeAttribute("id");
+    </script>
+
+    <!-- Manipulate CSS -->
+    <h3 id="cssManipulate">Hello</h3>
+    <hr>
+    <script>
+        var cssManipulate = document.getElementById("cssManipulate");
+        cssManipulate.style.color = "green";
+    </script>
+
+    <!-- Evant Handler Exercises -->
+    <!-- Onclick event -->
+    <button id="btn" onclick="change()">Change Background</button>
+    <hr>
+    <script>
+        var btn = document.getElementById("btn");
+        function change() {
+            var bo = document.querySelector("body");
+            bo.style.backgroundColor = "green";
+        }
+    </script>
+
+    <!-- Event Object -->
+    <div>
+        <button onclick="clicked(event)">Button 1</button>
+        <button onclick="clicked(event)">Button 2</button>
+        <button onclick="clicked(event)">Button 3</button>
+    </div>
+    <hr>
+    <script>
+        function clicked(event) {
+            alert(event.target.textContent);
+        }
+    </script>
+
+    <!-- Event Listener -->
+     <button class="btn">Click</button>
+     <script>
+        var btn = document.querySelector(".btn");
+        btn.addEventListener("click", function() {
+            alert("Hello");
+        });
+     </script>
+</body>
+
+</html>

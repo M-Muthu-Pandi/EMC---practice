@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-do list</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- To-do List -->
+    <h1>To-do List</h1>
+    <div>
+        <input type="text" id="inputBox">
+        <button id="btn">Add</button>
+        <ul id="container">
+            <li>Hello <button onclick="deleteItem(event)">Delete</button></li>
+        </ul>
+    </div>
+    <hr>
+
+    <!-- Student Details Task -->
+    <div>
+        <h1>Student Details Task</h1>
+        <form action="">
+            <table id="form">
+                <tr>
+                    <th><label for="name">Name</label></th>
+                    <td><input type="text" id="name"></td>
+                </tr>
+                <tr>
+                    <th><label for="age">Age</label></th>
+                    <td><input type="number" id="age"></td>
+                </tr>
+                <tr>
+                    <th><label for="gender">Gender</label></th>
+                    <td>
+                        <input class="gender" type="radio" id="gender" name="gender" value="Male">Male
+                        <input class="gender" type="radio" name="gender" value="Female">Female
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="course">Course</label></th>
+                    <td>
+                        <select name="course" id="course">
+                            <option value="Python">Python</option>
+                            <option value="JavaScript">JavaScript</option>
+                            <option value="C++">C++</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="mail">E-mail</label></th>
+                    <td><input type="email" id="mail"></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><button type="button" id="save">Save</button></td>
+                </tr>
+            </table>
+        </form>
+        <br>
+
+        <table id="data">
+            <tr>
+                <th>NAME</th>
+                <th>AGE</th>
+                <th>GENDER</th>
+                <th>COURSE</th>
+                <th>EMAIL</th>
+                <th>ACTION</th>
+            </tr>
+            <tr>
+                <td>Amal</td>
+                <td>24</td>
+                <td>Male</td>
+                <td>Python</td>
+                <td>amal12@gmail.com</td>
+                <td><button onclick="del(event)">Delete</button></td>
+            </tr>
+        </table>
+    </div>
+
+
+    <script src="main.js"></script>
+</body>
+
+</html>
