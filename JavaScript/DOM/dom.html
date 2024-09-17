@@ -85,13 +85,76 @@
     </script>
 
     <!-- Event Listener -->
-     <button class="btn">Click</button>
-     <script>
+    <button class="btn">Click</button>
+    <hr>
+    <script>
         var btn = document.querySelector(".btn");
-        btn.addEventListener("click", function() {
+        btn.addEventListener("click", function () {
             alert("Hello");
         });
-     </script>
+    </script>
+
+    <!-- How to select value from Radio Buttons -->
+    <div>
+        <input type="radio" name="gender" value="Male">Male
+        <input type="radio" name="gender" value="Female">Female
+        <h1 id="radioResult">Male/Female</h1>
+    </div>
+    <hr>
+    <script>
+        var radio = document.getElementsByName("gender");
+        var radioResult = document.getElementById("radioResult");
+
+        // 3 ways
+
+        // radio[0].addEventListener("click", function(){
+        //     radioResult.textContent = radio[0].value;
+        // });
+        // radio[1].addEventListener("click", function(){
+        //     radioResult.textContent = radio[1].value;
+        // });
+
+        // radio[0].addEventListener("click", function(){
+        //     radioResult.textContent = event.target.value;
+        // });
+        // radio[1].addEventListener("click", function(){
+        //     radioResult.textContent = event.target.value;
+        // });
+
+        for (count = 0; count < radio.length; count++) {
+            radio[count].addEventListener("click", function () {
+                radioResult.textContent = event.target.value;
+            });
+        }
+    </script>
+
+    <!-- How to select value from CheckBox -->
+    <div>
+        <input type="checkbox" name="check" value="C++">C++
+        <input type="checkbox" name="check" value="Java">Java
+        <input type="checkbox" name="check" value="Python">Python
+        <h1 id="checkResult"></h1>
+    </div>
+    <hr>
+    <script>
+        var check = document.getElementsByName("check");
+        var checkResult = document.getElementById("checkResult");
+        var skill = [];
+
+        for (count = 0; count < check.length; count++) {
+            check[count].addEventListener("click", function () {
+                if(event.target.checked) {
+                    skill.push(event.target.value);
+                    checkResult.textContent = skill;
+                }
+                else {
+                    var index = skill.indexOf(event.target.value);
+                    skill.splice(index,1);
+                    checkResult.textContent = skill;
+                }
+            });
+        }
+    </script>
 </body>
 
 </html>
