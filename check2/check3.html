@@ -1,0 +1,200 @@
+<div>
+    <input type="checkbox" name="tags" value="summer"> Summer <br>
+    <input type="checkbox" name="tags" value="party"> Party <br>
+    <input type="checkbox" name="tags" value="beach"> Beach
+</div>
+<div>
+    <input type="checkbox" name="tags" value="red"> Red <br>
+    <input type="checkbox" name="tags" value="blue"> Blue <br>
+    <input type="checkbox" name="tags" value="white"> White <br>
+    <input type="checkbox" name="tags" value="green"> Green
+</div>
+<div>
+    <input type="checkbox" name="tags" value="new"> New <br>
+    <input type="checkbox" name="tags" value="old"> Old
+</div>
+
+<!-- Shirt List -->
+<div>
+    <div class="shirt" data-tags="summer red new">
+        <h1>summer shirt</h1>
+    </div>
+    <div class="shirt" data-tags="summer red old">
+        <h1>summer shirt 2</h1>
+    </div>
+    <div class="shirt" data-tags="summer blue new">
+        <h1>floral summer shirt</h1>
+    </div>
+    <div class="shirt" data-tags="party white new">
+        <h1>party shirt</h1>
+    </div>
+    <div class="shirt" data-tags="party green old">
+        <h1>winter party shirt</h1>
+    </div>
+    <div class="shirt" data-tags="beach red old">
+        <h1>beach shirt</h1>
+    </div>
+    <div class="shirt" data-tags="beach white old">
+        <h1>floral beach shirt</h1>
+    </div>
+</div>
+
+<!-- <script>
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    const shirts = document.querySelectorAll('.shirt');
+
+    // Function to filter shirts based on checked boxes
+    function filterShirts() {
+        // Get the checked values (tags)
+        const checkedTags = Array.from(checkboxes)
+            .filter(checkbox => checkbox.checked)
+            .map(checkbox => checkbox.value);
+
+        shirts.forEach(shirt => {
+            // Get the shirt's tags
+            const shirtTags = shirt.getAttribute('data-tags').split(' ');
+
+            // Show shirt if all checked tags match the shirt's tags
+            const matches = checkedTags.every(tag => shirtTags.includes(tag));
+
+            // Display or hide the shirt based on the match
+            if (matches || checkedTags.length === 0) {
+                shirt.style.display = 'block';  // Show the shirt
+            } else {
+                shirt.style.display = 'none';   // Hide the shirt
+            }
+        });
+    }
+
+    // Add change event listener to all checkboxes
+    checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', filterShirts);
+    });
+
+    // Initial call to display all shirts when the page loads
+    filterShirts();
+</script> -->
+
+<!-- <script>
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    const shirts = document.querySelectorAll('.shirt');
+
+    // Function to filter shirts based on checked boxes
+    function filterShirts() {
+        // Get the checked values (tags)
+        const checkedTags = Array.from(checkboxes)
+            .filter(checkbox => checkbox.checked)
+            .map(checkbox => checkbox.value);
+
+        shirts.forEach(shirt => {
+            // Get the shirt's tags as an array
+            const shirtTags = shirt.getAttribute('data-tags').split(' ');
+
+            // Show shirt if at least one checked tag matches the shirt's tags
+            const matches = checkedTags.some(tag => shirtTags.includes(tag));
+
+            // Display or hide the shirt based on the match
+            if (matches || checkedTags.length === 0) {
+                shirt.style.display = 'block';  // Show the shirt
+            } else {
+                shirt.style.display = 'none';   // Hide the shirt
+            }
+        });
+    }
+
+    // Add change event listener to all checkboxes
+    checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', filterShirts);
+    });
+
+    // Initial call to display all shirts when the page loads
+    filterShirts();
+
+</script> -->
+
+<!-- <script>
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    const shirts = document.querySelectorAll('.shirt');
+
+    // Function to filter shirts based on selected checkboxes
+    function filterShirts() {
+        // Get all checked values (tags) from the checkboxes
+        const checkedTags = Array.from(checkboxes)
+            .filter(checkbox => checkbox.checked)
+            .map(checkbox => checkbox.value);
+
+        shirts.forEach(shirt => {
+            // Get the shirt's tags as an array
+            const shirtTags = shirt.getAttribute('data-tags').split(' ');
+
+            // Check if the shirt matches all selected tags
+            const matches = checkedTags.every(tag => shirtTags.includes(tag));
+
+            // Show or hide the shirt based on whether it matches all selected tags
+            if (matches || checkedTags.length === 0) {
+                shirt.style.display = 'block';  // Show the shirt
+            } else {
+                shirt.style.display = 'none';   // Hide the shirt
+            }
+        });
+    }
+
+    // Add event listeners to all checkboxes to trigger the filter function on change
+    checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', filterShirts);
+    });
+
+    // Initial call to display all shirts when the page loads
+    filterShirts();
+</script> -->
+
+<script>
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    const shirts = document.querySelectorAll('.shirt');
+
+    // Function to filter shirts based on checked boxes
+    function filterShirts() {
+        // Get the selected categories and colors separately
+        const selectedCategories = Array.from(checkboxes)
+            .filter(checkbox => checkbox.checked && ['summer', 'party', 'beach'].includes(checkbox.value))
+            .map(checkbox => checkbox.value);
+
+        const selectedColors = Array.from(checkboxes)
+            .filter(checkbox => checkbox.checked && ['red', 'blue', 'white', 'green'].includes(checkbox.value))
+            .map(checkbox => checkbox.value);
+
+        // Get selected tags like 'new' or 'old' if needed
+        const selectedCondition = Array.from(checkboxes)
+            .filter(checkbox => checkbox.checked && ['new', 'old'].includes(checkbox.value))
+            .map(checkbox => checkbox.value);
+
+        shirts.forEach(shirt => {
+            // Get the shirt's tags as an array
+            const shirtTags = shirt.getAttribute('data-tags').split(' ');
+
+            // Shirt should match at least one selected category (if any are selected)
+            const matchesCategory = selectedCategories.length === 0 || selectedCategories.some(tag => shirtTags.includes(tag));
+
+            // Shirt should match at least one selected color (if any are selected)
+            const matchesColor = selectedColors.length === 0 || selectedColors.some(tag => shirtTags.includes(tag));
+
+            // Shirt should match at least one selected condition (if any are selected)
+            const matchesCondition = selectedCondition.length === 0 || selectedCondition.some(tag => shirtTags.includes(tag));
+
+            // Show shirt if it matches the selected category, color, and condition
+            if (matchesCategory && matchesColor && matchesCondition) {
+                shirt.style.display = 'block';  // Show the shirt
+            } else {
+                shirt.style.display = 'none';   // Hide the shirt
+            }
+        });
+    }
+
+    // Add change event listener to all checkboxes
+    checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', filterShirts);
+    });
+
+    // Initial call to display all shirts when the page loads
+    filterShirts();
+</script>

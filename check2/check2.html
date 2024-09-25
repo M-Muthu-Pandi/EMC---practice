@@ -1,0 +1,49 @@
+<div>
+    <!-- Checkboxes for filtering -->
+    <input type="checkbox" name="tags" value="summer"> Summer <br>
+    <input type="checkbox" name="tags" value="party"> Party <br>
+    <input type="checkbox" name="tags" value="beach"> Beach
+</div>
+
+<!-- Shirt List -->
+<div id="shirts">
+    <h1 class="shirt" data-tags="summer">summer shirt</h1>
+    <h1 class="shirt" data-tags="summer">floral summer shirt</h1>
+    <h1 class="shirt" data-tags="party">party shirt</h1>
+    <h1 class="shirt" data-tags="party">winter party shirt</h1>
+    <h1 class="shirt" data-tags="beach">beach shirt</h1>
+    <h1 class="shirt" data-tags="beach">floral beach shirt</h1>
+</div>
+
+<!-- JavaScript to handle the filtering logic -->
+<script>
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    const shirts = document.querySelectorAll('.shirt');
+
+    // Function to filter shirts based on checked boxes
+    function filterShirts() {
+        // Get the checked tags
+        const checkedTags = Array.from(checkboxes)
+            .filter(checkbox => checkbox.checked)
+            .map(checkbox => checkbox.value);
+
+        shirts.forEach(shirt => {
+            const shirtTags = shirt.getAttribute('data-tags');
+
+            // Show shirt if its tag is in the checked tags or if no checkboxes are checked
+            if (checkedTags.length === 0 || checkedTags.includes(shirtTags)) {
+                shirt.style.display = 'block';  // Show the shirt
+            } else {
+                shirt.style.display = 'none';   // Hide the shirt
+            }
+        });
+    }
+
+    // Add event listeners to all checkboxes to trigger filtering on change
+    checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', filterShirts);
+    });
+
+    // Initial call to display all shirts when the page loads
+    filterShirts();
+</script>

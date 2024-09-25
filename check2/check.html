@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <div>
+        <input type="checkbox" name="tags" value="summer"> Summer <br>
+        <input type="checkbox" name="tags" value="party"> Party <br>
+        <input type="checkbox" name="tags" value="beach"> Beach
+    </div>
+    <div>
+        <input type="checkbox" name="tags" value="red"> Red <br>
+        <input type="checkbox" name="tags" value="blue"> Blue <br>
+        <input type="checkbox" name="tags" value="white"> White <br>
+        <input type="checkbox" name="tags" value="green"> Green
+    </div>
+    <div>
+        <input type="checkbox" name="tags" value="new"> New <br>
+        <input type="checkbox" name="tags" value="old"> Old
+    </div>
+    <div>
+        <div>
+            <h1>summer shirt</h1> <!-- New & red Shirt -->
+        </div>
+        <div>
+            <h1>floral summer shirt</h1> <!-- New & blue Shirt -->
+        </div>
+        <div>
+            <h1>party shirt</h1> <!-- New & white Shirt -->
+        </div>
+        <div>
+            <h1>winter party shirt</h1> <!-- Old & green Shirt -->
+        </div>
+        <div>
+            <h1>beach shirt</h1> <!-- Old & red Shirt -->
+        </div>
+        <div>
+            <h1>floral beach shirt</h1> <!-- Old & white Shirt -->
+        </div>
+    </div> -->
+
+    <div>
+        <!-- Checkboxes for filtering -->
+        <input type="checkbox" name="tags" value="summer" id="summer"> Summer <br>
+        <input type="checkbox" name="tags" value="party" id="party"> Party <br>
+        <input type="checkbox" name="tags" value="beach" id="beach"> Beach
+    </div>
+
+    <!-- Shirt List -->
+    <div id="shirts">
+        <h1 class="shirt summer">summer shirt</h1>
+        <h1 class="shirt summer">floral summer shirt</h1>
+        <h1 class="shirt party">party shirt</h1>
+        <h1 class="shirt party">winter party shirt</h1>
+        <h1 class="shirt beach">beach shirt</h1>
+        <h1 class="shirt beach">floral beach shirt</h1>
+    </div>
+
+    <!-- JavaScript to handle the filtering logic -->
+    <script>
+        const checkboxes = document.querySelectorAll('input[name="tags"]');
+        const shirts = document.querySelectorAll('.shirt');
+
+        // Function to filter shirts based on checked boxes
+        function filterShirts() {
+            const checkedTags = Array.from(checkboxes)
+                .filter(checkbox => checkbox.checked)
+                .map(checkbox => checkbox.value);
+
+            shirts.forEach(shirt => {
+                // Check if any of the shirt's classes match the checked tags
+                const shirtClasses = Array.from(shirt.classList);
+                const matchesTag = checkedTags.some(tag => shirtClasses.includes(tag));
+
+                // Show the shirt if it matches a checked tag, otherwise hide it
+                if (matchesTag || checkedTags.length === 0) {
+                    shirt.style.display = 'block';  // Show the shirt
+                } else {
+                    shirt.style.display = 'none';   // Hide the shirt
+                }
+            });
+        }
+
+        // Add event listeners to all checkboxes to trigger filtering on change
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', filterShirts);
+        });
+
+        // Initial call to display all shirts when the page loads
+        filterShirts();
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,179 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the Number</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="../Mu2 Website Icon.png">
+</head>
+
+<body>
+    <div class="container">
+        <div class="game">
+            <h1>Guess the Number</h1>
+            <h2>---- 1 to 5 ----</h2>
+            <div class="input">
+                <input type="text" placeholder="Enter Any Number" id="inputBox">
+                <button id="btn" onclick="checkTheNumber()">Check</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initialize guesses and generate random number
+        var noOfGuess = 3;
+        var randomNumber = Math.floor(Math.random() * 5) + 1;  // Random number between 1 and 5
+
+        // Event handler function
+        function checkTheNumber() {
+            var userGuess = parseInt(document.getElementById("inputBox").value);  // Get user input
+
+            if (userGuess === randomNumber) {
+                alert("You got it Right, Congratulations! The number was " + randomNumber);
+                if (confirm("Do you want to play again?")) {
+                    restartGame();
+                }
+            } else {
+                noOfGuess--;
+
+                if (noOfGuess === 0) {
+                    alert("You lost! The correct number was " + randomNumber);
+                    if (confirm("Do you want to play again?")) {
+                        restartGame();
+                    }
+                } else {
+                    alert("Wrong guess! You have " + noOfGuess + " guesses left.");
+                }
+            }
+        }
+
+        // Function to restart the game
+        function restartGame() {
+            noOfGuess = 3;
+            randomNumber = Math.floor(Math.random() * 5) + 1;
+            document.getElementById("inputBox").value = "";  // Clear the input box
+        }
+    </script>
+</body>
+
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the Number</title>
+</head>
+
+<body>
+    <script>
+        // Function to start the game
+        function startGame() {
+            let noOfGuesses = 3; // Available guesses
+            const randomNumber = Math.floor(Math.random() * 5) + 1; // Random number between 1 and 5
+
+            alert("Welcome to the Guess the Number game! The number is between 1 and 5.");
+
+            // Loop until the user has no more guesses or wins
+            while (noOfGuesses > 0) {
+                let userGuess = prompt("Enter your guess (1 to 5): ");
+
+                // Ensure the input is a valid number
+                userGuess = parseInt(userGuess);
+
+                if (isNaN(userGuess) || userGuess < 1 || userGuess > 5) {
+                    alert("Please enter a valid number between 1 and 5.");
+                    continue;  // Continue to the next iteration
+                }
+
+                // Check if the guess is correct
+                if (userGuess === randomNumber) {
+                    alert("Congratulations! You guessed the number right. It was " + randomNumber + ".");
+                    break; // User wins, exit the loop
+                } else {
+                    noOfGuesses--; // Decrease available guesses
+                    if (noOfGuesses > 0) {
+                        alert("Wrong guess! You have " + noOfGuesses + " guesses left.");
+                    } else {
+                        alert("Sorry! You lost. The correct number was " + randomNumber + ".");
+                    }
+                }
+            }
+
+            // Ask if the user wants to restart the game
+            if (confirm("Do you want to play again?")) {
+                startGame();  // Restart the game
+            } else {
+                alert("Thanks for playing! Goodbye.");
+            }
+        }
+
+        // Start the game when the page loads
+        startGame();
+    </script>
+</body>
+
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the Number</title>
+</head>
+
+<body>
+    <script>
+        function startGame() {
+            // const maxGuesses = 3;
+            const randomNumber = Math.floor(Math.random() * 5) + 1; // Random number between 1 and 5
+
+            alert("Welcome to the Guess the Number game! The number is between 1 and 5.");
+            
+            // Use a for loop to control the number of guesses
+            for (let noOfGuesses = 3; noOfGuesses > 0; noOfGuesses--) {
+                let userGuess = prompt(`Enter your guess (1 to 5). You have ${noOfGuesses} guesses left: `);
+
+                // Ensure the input is a valid number
+                userGuess = parseInt(userGuess);
+
+                if (isNaN(userGuess) || userGuess < 1 || userGuess > 5) {
+                    alert("Please enter a valid number between 1 and 5.");
+                    noOfGuesses++; // Don't count invalid input as a guess
+                    continue;  // Continue to the next iteration
+                }
+
+                // Check if the guess is correct
+                if (userGuess === randomNumber) {
+                    alert("Congratulations! You guessed the number right. It was " + randomNumber + ".");
+                    break; // User wins, exit the loop
+                } else if (noOfGuesses - 1 > 0) { // Only alert if guesses remain
+                    alert("Wrong guess! Try again.");
+                }
+
+                // If no guesses are left, show the correct number
+                if (noOfGuesses - 1 === 0) {
+                    alert("Sorry! You lost. The correct number was " + randomNumber + ".");
+                }
+            }
+
+            // Ask if the user wants to restart the game
+            if (confirm("Do you want to play again?")) {
+                startGame();  // Restart the game
+            } else {
+                alert("Thanks for playing! Goodbye.");
+            }
+        }
+
+        // Start the game when the page loads
+        startGame();
+    </script>
+</body>
+
+</html>

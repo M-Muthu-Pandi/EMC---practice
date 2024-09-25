@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Array Methods</title>
+</head>
+
+<body>
+    <h1>JavaScript Array Methods</h1>
+
+    <script>
+        // Map Method
+        console.log("Map Method");
+        var num = [1, 2, 3, 4, 5];
+        var newArr = num.map((data) => {
+            return data * data;
+        });
+        console.log(newArr);
+
+        // ForEach loop
+        console.log("ForEach loop");
+        var fruits = ["Orange", "Apple", "Banana", "Strawberry"]
+
+        fruits.forEach((data2, index2) => {
+            if (data2 == "Apple") {
+                console.log(data2 + " position is: " + index2);
+            }
+        });
+
+        // Filter function
+        console.log("Filter function");
+        var num2 = [23, 33, 67, 22, 12, 77];
+
+        var greater = num2.filter((data3) => {
+            if (data3 > 50) {
+                return true;
+            } else {
+                return false;
+            }
+        });
+        console.log(greater);
+    </script>
+</body>
+
+</html>
